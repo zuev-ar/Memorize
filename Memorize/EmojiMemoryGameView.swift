@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    @ObservedObject var game: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGameViewModel
     
     var body: some View {
         ScrollView {
@@ -28,7 +28,7 @@ struct EmojiMemoryGameView: View {
 }
 
 struct CardView: View {
-    let card: EmojiMemoryGame.Card
+    let card: EmojiMemoryGameViewModel.Card
     
     var body: some View {
         GeometryReader { geometry in
