@@ -39,6 +39,10 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             }
         }
     }
+    
+    mutating func shuffle() {
+        cards.shuffle()
+    }
 
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = []
@@ -51,7 +55,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     
     struct Card: Identifiable {
         let id: Int
-        var isFaceUp = true
+        var isFaceUp = false
         var isMatched = false
         let content: CardContent
     }
