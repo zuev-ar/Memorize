@@ -20,19 +20,19 @@ struct Pie: Shape {
             y: center.y + radius * sin(startAngle.radians)
         )
         
-        var p = Path()
+        var path = Path()
         
-        p.move(to: center)
-        p.addLine(to: start)
-        p.addArc(
+        path.move(to: center)
+        path.addLine(to: start)
+        path.addArc(
             center: center,
             radius: radius,
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: !clockwise)
-        p.addLine(to: center)
+        path.addLine(to: center)
         
-        return p
+        return path
     }
     
 }
