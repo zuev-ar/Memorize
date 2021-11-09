@@ -13,7 +13,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     static let emojis: Array<String> = ["🍏", "🍎", "🍋", "🍊", "🍉", "🍇", "🍓", "🫐", "🍒", "🍑", "🥭", "🍍", "🥥", "🥝", "🍅", "🍆", "🥑", "🥦", "🥬", "🥒", "🌶", "🫑", "🌽"]
     
     static func createMemoryGame() -> MemoryGameModel<String> {
-        MemoryGameModel<String>(numberOfPairsOfCards: 6) { index in
+        MemoryGameModel<String>(numberOfPairsOfCards: 10) { index in
             emojis[index]
         }
     }
@@ -32,5 +32,9 @@ class EmojiMemoryGameViewModel: ObservableObject {
     
     func shuffle() {
         model.shuffle()
+    }
+    
+    func restart() {
+        model = EmojiMemoryGameViewModel.createMemoryGame()
     }
 }
